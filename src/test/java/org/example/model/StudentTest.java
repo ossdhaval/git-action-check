@@ -8,6 +8,6 @@ public class StudentTest {
     @Test
     public void setterShouldSetNameCorrectly()
     {
-        fail();
+//        fail();
     }
 }

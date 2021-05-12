@@ -11,7 +11,6 @@ public class Student {
     public void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
-
-    my
+    
 
 }

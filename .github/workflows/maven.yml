@@ -50,9 +50,9 @@ jobs:
 #    - name: Build with Maven
 #      run: mvn -B package --file pom.xml
     - name: check jvm
-       if: contains(env.JVM_PROJECTS, github.repository)
-       run: echo "jvm"
+      if: contains(env.JVM_PROJECTS, github.repository)
+      run: echo "jvm"
 
     - name: check non-jvm
-        if: contains(env.NON_JVM_PROJECTS, github.repository)
-        run: echo "non-jvm"
+      if: contains(env.NON_JVM_PROJECTS, github.repository)
+      run: echo "non-jvm"

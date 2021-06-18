@@ -23,7 +23,7 @@ jobs:
         JanssenProject/jans-notify
         JanssenProject/jans-fido2
         JanssenProject/jans-eleven
-        ossdhaval/git-action-checker
+        ossdhaval/git-action-chec
       NON_JVM_PROJECTS: |
         JanssenProject/jans-setup
         JanssenProject/jans-cli

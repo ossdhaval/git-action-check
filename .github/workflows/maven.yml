@@ -23,7 +23,7 @@ jobs:
         JanssenProject/jans-notify
         JanssenProject/jans-fido2
         JanssenProject/jans-eleven
-        ossdhaval/github-action-check
+        ossdhaval/git-action-check
       NON_JVM_PROJECTS: |
         JanssenProject/jans-setup
         JanssenProject/jans-cli
@@ -37,7 +37,7 @@ jobs:
         JanssenProject/docker-jans-certmanager
         JanssenProject/docker-jans-configuration-manager
         JanssenProject/jans-cloud-native
-        ossdhaval/github-action
+        ossdhaval/git-action
 
     steps:
     - uses: actions/checkout@v2

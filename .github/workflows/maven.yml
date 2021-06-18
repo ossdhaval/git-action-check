@@ -13,12 +13,12 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-        JVM_PROJECTS: |
+        JUICE: |
           [
-            "applet",
-            "orange"
+            "apple-juice",
+            "orange-juice"
           ]
-        NON_JVM_PROJECTS: |
+        FRUIT: |
           [
             "apple",
             "orange"
@@ -59,12 +59,12 @@ jobs:
 #        distribution: 'adopt'
 #    - name: Build with Maven
 #      run: mvn -B package --file pom.xml
-    - name: check jvm
-      if: contains(env.JVM_PROJECTS, 'apple')
+    - name: check apple
+      if: contains(env.JUICE, 'apple')
       run: |
-        echo "jvm"
+        echo "Found Juice"
 
-    - name: check non-jvm
-      if: contains(env.NON_JVM_PROJECTS, 'apple')
+    - name: check apple
+      if: contains(env.FRUIT, 'apple')
       run: |
-        echo "non-jvm"
+        echo "Found Fruit"

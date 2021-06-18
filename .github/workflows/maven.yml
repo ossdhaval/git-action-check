@@ -23,7 +23,7 @@ jobs:
         JanssenProject/jans-notify
         JanssenProject/jans-fido2
         JanssenProject/jans-eleven
-        oooossdhaval/git-action-check
+        ossdhaval/git-action-checker
       NON_JVM_PROJECTS: |
         JanssenProject/jans-setup
         JanssenProject/jans-cli
@@ -37,7 +37,7 @@ jobs:
         JanssenProject/docker-jans-certmanager
         JanssenProject/docker-jans-configuration-manager
         JanssenProject/jans-cloud-native
-        ossdhaval/git-action
+        ossdhaval/git-action-check
 
     steps:
     - uses: actions/checkout@v2
@@ -49,11 +49,11 @@ jobs:
 #    - name: Build with Maven
 #      run: mvn -B package --file pom.xml
     - name: check jvm
-      if: endsWith(env.JVM_PROJECTS, github.repository)
+      if: contains(env.JVM_PROJECTS, github.repository)
       run: |
         echo "jvm"
 
     - name: check non-jvm
-      if: endsWith(env.NON_JVM_PROJECTS, github.repository)
+      if: contains(env.NON_JVM_PROJECTS, github.repository)
       run: |
         echo "non-jvm"

@@ -13,31 +13,42 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      JVM_PROJECTS: |
-        JanssenProject/jans-auth-server
-        JanssenProject/jans-orm
-        JanssenProject/jans-config-api
-        JanssenProject/jans-client-api
-        JanssenProject/jans-scim
-        JanssenProject/jans-core
-        JanssenProject/jans-notify
-        JanssenProject/jans-fido2
-        JanssenProject/jans-eleven
-        ossdhaval/git-action-chec
-      NON_JVM_PROJECTS: |
-        JanssenProject/jans-setup
-        JanssenProject/jans-cli
-        JanssenProject/docker-jans-persistence-loader
-        JanssenProject/docker-jans-client-api
-        JanssenProject/jans-pycloudlib
-        JanssenProject/docker-jans-auth-server
-        JanssenProject/docker-jans-fido2
-        JanssenProject/docker-jans-scim
-        JanssenProject/docker-jans-config-api
-        JanssenProject/docker-jans-certmanager
-        JanssenProject/docker-jans-configuration-manager
-        JanssenProject/jans-cloud-native
-        ossdhaval/git-action-check
+        JVM_PROJECTS: |
+          [
+            "applet",
+            "orange"
+          ]
+        NON_JVM_PROJECTS: |
+          [
+            "apple",
+            "orange"
+          ]
+          
+#       JVM_PROJECTS: |
+#         JanssenProject/jans-auth-server
+#         JanssenProject/jans-orm
+#         JanssenProject/jans-config-api
+#         JanssenProject/jans-client-api
+#         JanssenProject/jans-scim
+#         JanssenProject/jans-core
+#         JanssenProject/jans-notify
+#         JanssenProject/jans-fido2
+#         JanssenProject/jans-eleven
+#         ossdhaval/git-action-chec
+#       NON_JVM_PROJECTS: |
+#         JanssenProject/jans-setup
+#         JanssenProject/jans-cli
+#         JanssenProject/docker-jans-persistence-loader
+#         JanssenProject/docker-jans-client-api
+#         JanssenProject/jans-pycloudlib
+#         JanssenProject/docker-jans-auth-server
+#         JanssenProject/docker-jans-fido2
+#         JanssenProject/docker-jans-scim
+#         JanssenProject/docker-jans-config-api
+#         JanssenProject/docker-jans-certmanager
+#         JanssenProject/docker-jans-configuration-manager
+#         JanssenProject/jans-cloud-native
+#         ossdhaval/git-action-check
 
     steps:
     - uses: actions/checkout@v2
@@ -49,11 +60,11 @@ jobs:
 #    - name: Build with Maven
 #      run: mvn -B package --file pom.xml
     - name: check jvm
-      if: contains(env.JVM_PROJECTS, github.repository)
+      if: contains(env.JVM_PROJECTS, 'apple')
       run: |
         echo "jvm"
 
     - name: check non-jvm
-      if: contains(env.NON_JVM_PROJECTS, github.repository)
+      if: contains(env.NON_JVM_PROJECTS, 'apple')
       run: |
         echo "non-jvm"
